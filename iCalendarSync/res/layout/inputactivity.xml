@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
+  android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/TextViewInputName" android:text="@string/inputactivity_textview_name"></TextView><EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/EditTextInputName"></EditText>
+<TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="5dp" android:id="@+id/TextViewInputLink" android:text="@string/inputactivity_textview_link"></TextView><EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/EditTextInputLink"></EditText>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/ButtonSendInput" android:text="@string/inputactivity_button_sendinput" android:layout_gravity="center_horizontal" android:layout_marginTop="100dp" android:onClick="onClick"></Button>
+
+
 </LinearLayout>

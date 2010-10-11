@@ -28,7 +28,7 @@ public class AccountAuthenticator extends AbstractAccountAuthenticator {
 			throws NetworkErrorException {
 		
 		// Check the asked accountType
-		if(accountType.equals("com.dachlo.icalsync.account"))
+		if(accountType.equals("com.daschlo.icalsync.account"))
 		{			
 			// Create intent to ask the user for input and put the response with it
 			Intent i = new Intent(mContext,InputActivity.class);
