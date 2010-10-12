@@ -19,6 +19,8 @@ public class AccountTask extends AsyncTask<String, Void, Boolean> {
 	
 	public AccountTask(Context context)
 	{
+		super();
+		
 		// Save context for later use
 		mContext = context;
 		

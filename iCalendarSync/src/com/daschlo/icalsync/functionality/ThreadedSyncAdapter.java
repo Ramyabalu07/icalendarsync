@@ -1,6 +1,7 @@
 package com.daschlo.icalsync.functionality;
 
 import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.AbstractThreadedSyncAdapter;
 import android.content.ContentProviderClient;
 import android.content.Context;
@@ -9,16 +10,26 @@ import android.os.Bundle;
 
 public class ThreadedSyncAdapter extends AbstractThreadedSyncAdapter {
 
-	public ThreadedSyncAdapter(Context context, boolean autoInitialize) {
-		super(context, autoInitialize);
-		// TODO Auto-generated constructor stub
+	private Context mContext;
+	
+	public ThreadedSyncAdapter(Context context) {
+		super(context, true);
+		
+		
+		// Save context for later use
+		mContext = context;
 	}
 
 	@Override
 	public void onPerformSync(Account account, Bundle extras, String authority,
 			ContentProviderClient provider, SyncResult syncResult) {
-		// TODO Auto-generated method stub
 
+		// Get the saved link
+		AccountManager accountmanager = AccountManager.get(mContext);
+		String accountLink = accountmanager.getUserData(account, "com.daschlo.icalsync.account.link");
+
+		// TODO start syncing
+		
 	}
 
 }
