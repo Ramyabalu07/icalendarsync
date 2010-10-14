@@ -2,18 +2,23 @@ package com.daschlo.icalsync.representation;
 
 import java.util.HashSet;
 
-import com.android.icalsync.R;
+import com.daschlo.icalsync.R;
 import com.daschlo.icalsync.application.AccountTask;
+import com.daschlo.icalsync.util.FunctionCollection;
 import com.daschlo.icalsync.util.GoogleCalendar;
 import com.daschlo.icalsync.util.ICallLog;
 
 import android.accounts.AccountAuthenticatorActivity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,44 +33,41 @@ public class InputActivity extends AccountAuthenticatorActivity {
 		super.onCreate(icicle);
 		setContentView(R.layout.inputactivity);
 		
-		// Fill in the calendar in the spinner
-		ICallLog.postLogInfo("Get calendars for spinner", "InputActivity.onCreate");
 		try
 		{
-			// Get ContentResolver and Cursor for reading out the calendars
-			ContentResolver contentresolver = getContentResolver();
-			final Cursor cursor = contentresolver.query(
-					Uri.parse(getString(R.string.pref_calendaruri_calendars)), 
-					getResources().getStringArray(R.array.pref_calendaruri_calendars_projection), 
-					null, null, null);
-			
-			// Create HashSet to save Calendar-Data (Id and Name)
-			HashSet<GoogleCalendar> calendars = new HashSet<GoogleCalendar>();
-			
-			// Go through all calendars and note name and id, if its selected and not readonly
-			while(cursor.moveToNext())
-			{
-				if(!cursor.getString(2).equals("0")||Integer.valueOf(cursor.getString(3))>=500)
-				{
-					// Add the seperate Calendars and save their ids and names
-					calendars.add(new GoogleCalendar(cursor.getString(0),cursor.getString(1)));							
-				}
-			}
-			
-			// Create an ArrayAdapter
-			ArrayAdapter<GoogleCalendar> arrayadapter = new ArrayAdapter<GoogleCalendar>(
-					this,
-					android.R.layout.simple_spinner_item,
-					(GoogleCalendar [])calendars.toArray(new GoogleCalendar[calendars.size()]));
-			arrayadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-			
+			// Get Calendars in the spinner-item
 			Spinner spinner = (Spinner)findViewById(R.id.SpinnerCalendar);
-			spinner.setAdapter(arrayadapter);
+			spinner.setAdapter(FunctionCollection.getCalendars(this));
 			
-			GoogleCalendar googlecalendar = (GoogleCalendar)spinner.getSelectedItem();
-			ProgressDialog dialog = ProgressDialog.show(this, googlecalendar.mID, googlecalendar.mName);
-			Thread.sleep(5000);
-			dialog.dismiss();
+			// Set Listener to save changes
+			spinner.setOnItemSelectedListener(new OnItemSelectedListener()
+			{
+
+				@Override
+				public void onItemSelected(AdapterView<?> arg0, View arg1,
+						int arg2, long arg3) {
+					
+					// Get the selected item
+					GoogleCalendar googlecalendar = (GoogleCalendar) arg0.getItemAtPosition(arg2);
+					
+					// Get apps Preferences-Editor
+					SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+					SharedPreferences.Editor editor = sharedpreferences.edit();
+					
+					// Save the selection
+					editor.putString(getString(R.string.pref_app_calendartosave), googlecalendar.mID);
+					editor.commit();
+					
+				}
+
+				@Override
+				public void onNothingSelected(AdapterView<?> arg0) {
+					// If nothing is selected --> select something
+					arg0.setSelection(0);
+					
+				}
+				
+			});
 			
 		}
 		catch(Exception e)

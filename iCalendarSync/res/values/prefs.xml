@@ -6,4 +6,6 @@
 <item>selected</item>
 <item>access_level</item>
 </string-array>
+<string name="accountscreen_preferencescreen_key_general">com.daschlo.icalsync.preferences.keys.general</string>
+<string name="pref_app_calendartosave">com.daschlo.icalsync.prefs.calendartosave</string>
 </resources>

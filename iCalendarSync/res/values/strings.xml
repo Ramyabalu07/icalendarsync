@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <string name="app_name">iCalendarSync</string>
+    
 <string name="accountscreen_preferencescreen_category_1">General Settings</string>
 <string name="inputactivity_button_sendinput">Add Account</string>
 <string name="inputactivity_textview_name">Account name:</string>
@@ -11,4 +11,7 @@
 <string name="accounttask_unsuccessful_title">Error</string>
 <string name="accounttask_unsuccessful_text">Authentication was not successful. Please try again...</string>
 
+<string name="app_name">iCalendarSync</string>
+<string name="accountscreen_preferencescreen_title_1">Settings</string>
+<string name="accountscreen_preferencescreen_summary_1">Interval, calendar, cache, update</string>
 </resources>

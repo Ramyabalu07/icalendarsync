@@ -1,6 +1,6 @@
 package com.daschlo.icalsync.application;
 
-import com.android.icalsync.R;
+import com.daschlo.icalsync.R;
 import com.daschlo.icalsync.representation.InputActivity;
 import com.daschlo.icalsync.util.ICallLog;
 

@@ -5,5 +5,8 @@
 <PreferenceScreen  xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<PreferenceCategory android:title="@string/accountscreen_preferencescreen_category_1" />
-
+	<PreferenceScreen android:key="@string/accountscreen_preferencescreen_key_general" android:summary="@string/accountscreen_preferencescreen_summary_1" android:title="@string/accountscreen_preferencescreen_title_1">
+			<intent android:action="android.intent.action.VIEW" android:targetClass="com.daschlo.icalsync.representation.PrefActivity" android:targetPackage="com.daschlo.icalsync.representation"/>
+	</PreferenceScreen>
+	
 </PreferenceScreen>

@@ -27,7 +27,7 @@ public class ThreadedSyncAdapter extends AbstractThreadedSyncAdapter {
 		// Get the saved link
 		AccountManager accountmanager = AccountManager.get(mContext);
 		String accountLink = accountmanager.getUserData(account, "com.daschlo.icalsync.account.link");
-
+		accountLink = accountLink.toString();
 		// TODO start syncing
 		
 	}

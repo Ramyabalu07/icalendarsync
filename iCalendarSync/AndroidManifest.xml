@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.android.icalsync"
       android:versionCode="1"
-      android:versionName="1.0" android:installLocation="auto">
+      android:versionName="1.0" android:installLocation="auto" package="com.daschlo.icalsync">
 
 
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
 	
 	
-	    <service android:label="@string/app_name" android:name="com.daschlo.icalsync.application.AccountService" android:exported="true">
+	    <service android:label="@string/app_name" android:exported="true" android:name=".application.AccountService">
 	    	
 	    	<intent-filter>
 	    		<action android:name="android.accounts.AccountAuthenticator" />
@@ -20,7 +19,7 @@
 	    </service>
 	    
 	    
-	    <service android:label="@string/app_name" android:exported="true" android:name="com.daschlo.icalsync.application.SyncService">
+	    <service android:label="@string/app_name" android:exported="true" android:name=".application.SyncService">
 		
 			<intent-filter>
 				<action android:name="android.content.SyncAdapter" />
@@ -31,7 +30,7 @@
 		</service>
 	    
 	    
-		<activity android:name="com.daschlo.icalsync.representation.InputActivity">
+		<activity android:name=".representation.InputActivity">
 			
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
@@ -40,7 +39,14 @@
 		</activity>	
 	
 	
-	</application>
+		<activity android:name=".representation.PrefActivity">
+			
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+			</intent-filter>
+			
+		</activity>
+</application>
 	
 	
 	
