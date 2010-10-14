@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="pref_calendaruri_calendars">content://com.android.calendar/calendars</string>
+<string-array name="pref_calendaruri_calendars_projection"><item>_id</item>
+<item>displayName</item>
+<item>selected</item>
+<item>access_level</item>
+</string-array>
+</resources>

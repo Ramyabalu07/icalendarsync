@@ -6,8 +6,9 @@
 <string name="inputactivity_button_sendinput">Add Account</string>
 <string name="inputactivity_textview_name">Account name:</string>
 <string name="inputactivity_textview_link">Link to ics file:</string>
-<string name="accounttask_progressdialog_title">Please wait</string>
+<string name="inputactivity_textview_calendar">Calendar to sync with:</string><string name="accounttask_progressdialog_title">Please wait</string>
 <string name="accounttask_progressdialog_text">Authenticating...</string>
 <string name="accounttask_unsuccessful_title">Error</string>
 <string name="accounttask_unsuccessful_text">Authentication was not successful. Please try again...</string>
+
 </resources>
