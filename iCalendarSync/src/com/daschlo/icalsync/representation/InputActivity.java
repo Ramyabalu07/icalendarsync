@@ -1,7 +1,5 @@
 package com.daschlo.icalsync.representation;
 
-import java.util.HashSet;
-
 import com.daschlo.icalsync.R;
 import com.daschlo.icalsync.application.AccountTask;
 import com.daschlo.icalsync.util.FunctionCollection;
@@ -9,17 +7,12 @@ import com.daschlo.icalsync.util.GoogleCalendar;
 import com.daschlo.icalsync.util.ICallLog;
 
 import android.accounts.AccountAuthenticatorActivity;
-import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -55,7 +48,7 @@ public class InputActivity extends AccountAuthenticatorActivity {
 					SharedPreferences.Editor editor = sharedpreferences.edit();
 					
 					// Save the selection
-					editor.putString(getString(R.string.pref_app_calendartosave), googlecalendar.mID);
+					editor.putString(getString(R.string.prefactivity_cat_1_calendar_key), googlecalendar.mID);
 					editor.commit();
 					
 				}
@@ -91,5 +84,7 @@ public class InputActivity extends AccountAuthenticatorActivity {
 		AccountTask task = new AccountTask(this);
 		task.execute(accountName,accountLink);
 	}
+	
+
 
 }

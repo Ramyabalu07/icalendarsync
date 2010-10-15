@@ -14,4 +14,15 @@
 <string name="app_name">iCalendarSync</string>
 <string name="accountscreen_preferencescreen_title_1">Settings</string>
 <string name="accountscreen_preferencescreen_summary_1">Interval, calendar, cache, update</string>
+<string name="prefactivity_cat_1_title">General Settings</string>
+<string name="prefactivity_cat_1_calendar_title">Calendar</string>
+<string name="prefactivity_cat_1_calendar_summary">Select calendar to sync in</string>
+<string name="prefactivity_cat_1_cache_title">Empty cache</string>
+<string name="prefactivity_cat_1_cache_summary">Empties the application cache</string>
+<string name="prefactivity_cat_2_title">Synchronisation settings</string>
+<string name="prefactivity_cat_2_interval_title">Interval</string>
+<string name="prefactivity_cat_2_interval_summary">Select the syncronisation interval</string>
+<string name="prefactivity_cat_2_forceudt_title">Force update</string>
+<string name="prefactivity_cat_2_forcecaludt_title">Force calendar update</string>
+<string name="prefactivity_cat_2_forcecaludt_summary">Forces google-calendar to sync after each sync</string>
 </resources>

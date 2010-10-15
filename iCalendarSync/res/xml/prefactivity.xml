@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory android:title="@string/prefactivity_cat_1_title"><ListPreference android:summary="@string/prefactivity_cat_1_calendar_summary" android:key="@string/prefactivity_cat_1_calendar_key" android:title="@string/prefactivity_cat_1_calendar_title"></ListPreference>
+<Preference android:title="@string/prefactivity_cat_1_cache_title" android:summary="@string/prefactivity_cat_1_cache_summary" android:key="@string/prefactivity_cat_1_cache_key"></Preference>
+</PreferenceCategory><PreferenceCategory android:title="@string/prefactivity_cat_2_title">
+<ListPreference android:summary="@string/prefactivity_cat_2_interval_summary" android:key="@string/prefactivity_cat_2_interval_key" android:title="@string/prefactivity_cat_2_interval_title" android:entryValues="@array/prefactivity_cat_2_interval_entryValues" android:entries="@array/prefactivity_cat_2_interval_entries" android:defaultValue="1440"></ListPreference>
+<CheckBoxPreference android:key="@string/prefactivity_cat_2_forceudt_key" android:title="@string/prefactivity_cat_2_forceudt_title"></CheckBoxPreference>
+<CheckBoxPreference android:key="@string/prefactivity_cat_2_forcecaludt_key" android:title="@string/prefactivity_cat_2_forcecaludt_title" android:summary="@string/prefactivity_cat_2_forcecaludt_summary"></CheckBoxPreference>
+</PreferenceCategory>
+</PreferenceScreen>

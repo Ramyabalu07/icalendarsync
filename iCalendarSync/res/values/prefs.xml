@@ -7,5 +7,10 @@
 <item>access_level</item>
 </string-array>
 <string name="accountscreen_preferencescreen_key_general">com.daschlo.icalsync.preferences.keys.general</string>
-<string name="pref_app_calendartosave">com.daschlo.icalsync.prefs.calendartosave</string>
+
+<string name="prefactivity_cat_1_calendar_key">com.daschlo.icalsync.prefs.calendar</string>
+<string name="prefactivity_cat_1_cache_key">com.daschlo.icalsync.prefs.cache</string>
+<string name="prefactivity_cat_2_interval_key">com.daschlo.icalsync.prefs.interval</string>
+<string name="prefactivity_cat_2_forceudt_key">com.daschlo.icalsync.prefs.forceudt</string>
+<string name="prefactivity_cat_2_forcecaludt_key">com.daschlo.icalsync.prefs.forcecaludt</string>
 </resources>
