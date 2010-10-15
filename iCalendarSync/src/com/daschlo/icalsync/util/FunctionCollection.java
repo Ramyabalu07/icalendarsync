@@ -30,7 +30,7 @@ public class FunctionCollection {
 		// Go through all calendars and note name and id, if its selected and not readonly
 		while(cursor.moveToNext())
 		{
-			if(!cursor.getString(2).equals("0")||Integer.valueOf(cursor.getString(3))>=500)
+			if(!cursor.getString(2).equals("0")&&Integer.valueOf(cursor.getString(3))>=500)
 			{
 				// Add the seperate Calendars and save their ids and names
 				calendars.add(new GoogleCalendar(cursor.getString(0),cursor.getString(1)));							
