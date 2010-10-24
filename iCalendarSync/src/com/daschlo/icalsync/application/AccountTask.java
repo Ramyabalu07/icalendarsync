@@ -8,6 +8,7 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -52,6 +53,9 @@ public class AccountTask extends AsyncTask<String, Void, Boolean> {
 			{
 				ICallLog.postLogInfo("Account: " + accountName + " added", "AccountTask.doInBackground" );
 				
+				// TESTCODE
+				ContentResolver.setSyncAutomatically(account, "com.android.calendar", true);
+						
 				// Give back reply
 				Bundle reply = new Bundle();
 				reply.putString(android.accounts.AccountManager.KEY_ACCOUNT_NAME, account.name);

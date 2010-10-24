@@ -25,4 +25,5 @@
 <string name="prefactivity_cat_2_forceudt_title">Force update</string>
 <string name="prefactivity_cat_2_forcecaludt_title">Force calendar update</string>
 <string name="prefactivity_cat_2_forcecaludt_summary">Forces google-calendar to sync after each sync</string>
+<string name="prefactivity_cat_2_timestamp_title">Last synchronisation</string>
 </resources>

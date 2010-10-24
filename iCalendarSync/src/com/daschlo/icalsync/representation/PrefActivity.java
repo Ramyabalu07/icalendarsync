@@ -9,11 +9,13 @@ import com.daschlo.icalsync.util.ICallLog;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.ListPreference;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.widget.ArrayAdapter;
@@ -23,7 +25,7 @@ public class PrefActivity extends PreferenceActivity {
 	public void onCreate(Bundle icicle)
 	{
 		super.onCreate(icicle);
-		addPreferencesFromResource(R.xml.prefactivity);
+		addPreferencesFromResource(R.xml.prefactivity);			
 		
 		// Get Handle on the ListPreference of the calendar-choice
 		PreferenceScreen preferencescreen = getPreferenceScreen();
@@ -49,6 +51,12 @@ public class PrefActivity extends PreferenceActivity {
 				}
 				
 			}});
+		
+		// Fill in the LastSync
+		SharedPreferences sharedpreferences = preferencescreen.getSharedPreferences();
+		String timestamp = sharedpreferences.getString(getString(R.string.pref_timestamp_key), "-");
+		Preference preference = preferencescreen.findPreference(getString(R.string.prefactivity_cat_2_timestamp_key));
+		preference.setSummary(timestamp);
 		
 		try 
 		{

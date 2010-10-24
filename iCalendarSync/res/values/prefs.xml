@@ -13,4 +13,6 @@
 <string name="prefactivity_cat_2_interval_key">com.daschlo.icalsync.prefs.interval</string>
 <string name="prefactivity_cat_2_forceudt_key">com.daschlo.icalsync.prefs.forceudt</string>
 <string name="prefactivity_cat_2_forcecaludt_key">com.daschlo.icalsync.prefs.forcecaludt</string>
+<string name="pref_timestamp_key">com.daschlo.icalsync.prefs.timestamp</string>
+<string name="prefactivity_cat_2_timestamp_key">com.daschlo.icalsync.prefs.stamp</string>
 </resources>
